@@ -1,0 +1,25 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: ai-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/disaster_ai
+    username: postgres
+    password: PIPL0050
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+python:
+  model-url: http://localhost:5000/predict  # Python FastAPI/Flask endpoint
